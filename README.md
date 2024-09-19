@@ -1,6 +1,10 @@
 ### Durak helper
 
-Simple helper for the card game Durak.
+Helps to keep track of cards in the game of 🃏 Durak.
+
+Available as a PWA (Progressive Web App) for offline use.
+
+[Live Demo](https://sosedik.github.io/Durak-Helper/)
 
 ###### Credits
 

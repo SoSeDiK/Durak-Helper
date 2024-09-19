@@ -149,7 +149,6 @@ header {
 }
 
 .card-selected {
-  /* outline: 5px solid aqua; */
   position: relative;
 }
 .card-selected::before {

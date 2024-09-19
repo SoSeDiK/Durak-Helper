@@ -4,15 +4,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Durak Helper</title>
+    <meta
+      name="description"
+      content="Card tracker for the card game of Durak."
+    />
     <link rel="icon" href="./assets/favicon.ico" />
     <link rel="icon" href="./assets/favicon.svg" />
-    <link rel="stylesheet" type="text/css" href="style/reset.css" />
-    <link rel="stylesheet" type="text/css" href="style/fonts.css" />
-    <link rel="stylesheet" type="text/css" href="style/styles.css" />
+    <link rel="stylesheet" type="text/css" href="./style/reset.css" />
+    <link rel="stylesheet" type="text/css" href="./style/fonts.css" />
+    <link rel="stylesheet" type="text/css" href="./style/styles.css" />
     <!-- PWA -->
-    <link rel="manifest" href="manifest.json" />
+    <link rel="manifest" href="./manifest.json" />
+    <meta name="mobile-web-app-capable" content="yes" />
     <!-- IOS support -->
-    <link rel="apple-touch-icon" href="/assets/favicon_180x180.png" />
+    <link rel="apple-touch-icon" href="./assets/icons/180x180.png" />
     <meta name="apple-mobile-web-app-status-bar" content="#192d5a" />
     <meta name="theme-color" content="#192d5a" />
   </head>
@@ -22,21 +27,21 @@
       <div class="state-controls">
         <button id="undo-controls-button" class="controls-button">
           <img
-            src="assets/undo_24dp.svg"
+            src="./assets/undo_24dp.svg"
             draggable="false"
             alt="Undo last action"
           />
         </button>
         <button id="redo-controls-button" class="controls-button">
           <img
-            src="assets/redo_24dp.svg"
+            src="./assets/redo_24dp.svg"
             draggable="false"
             alt="Redo last action"
           />
         </button>
         <button id="reset-controls-button" class="controls-button">
           <img
-            src="assets/restart_alt_24dp.svg"
+            src="./assets/restart_alt_24dp.svg"
             draggable="false"
             alt="Restart"
           />
@@ -56,6 +61,6 @@
       </div>
     </footer>
 
-    <script src="js/script.js"></script>
+    <script src="./js/script.js"></script>
   </body>
 </html>
