@@ -1,0 +1,219 @@
+* {
+  font-family: "Roboto Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  user-select: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: default;
+}
+
+button:active {
+  box-shadow: inset 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+body {
+  background-color: #346151;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #243a6f;
+}
+
+#title {
+  margin: 10px;
+  font-size: 1rem;
+  color: #fff;
+}
+
+@media screen and (min-height: 800px) and (min-width: 430px) {
+  #title {
+    font-size: 2rem;
+  }
+}
+
+.state-controls {
+  margin: 0px 0px;
+}
+
+@media screen and (min-width: 330px) {
+  .state-controls {
+    margin: 5px 20px;
+  }
+}
+
+.controls-button {
+  background-color: transparent;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.6rem;
+}
+
+.controls-button:disabled {
+  opacity: 0.5;
+}
+
+.controls-button:hover {
+  background-color: #3b54c7;
+}
+
+#reset-controls-button {
+  margin-left: 10px;
+}
+
+@media (min-width: 1600px) {
+  header {
+    justify-content: center;
+  }
+
+  .state-controls {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+#content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  padding: 1rem 0;
+}
+
+#card-grid {
+  display: flex;
+  justify-items: center;
+  gap: 10px;
+}
+
+#card-grid .column {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: max(min(22vw, 100px), 70px);
+  height: max(min(8vh, 60px), 40px);
+  border: 6px solid #000;
+  border-radius: 10px;
+  background-color: #f0f0f0;
+  padding: 0% 8%;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  transition: transform 0.2s ease;
+}
+
+.card:active {
+  transform: scale(1.02);
+  transition: transform 0.05s ease;
+}
+
+.card span {
+  font-size: 2rem;
+  color: #000;
+}
+
+.card span.num-10 {
+  font-size: 1.7rem;
+}
+
+.card img {
+  width: 40%;
+  padding: 2px;
+}
+
+.card-discarded {
+  opacity: 0.1;
+}
+
+.card-owned {
+  background-color: #4664e7;
+}
+
+.card-enemy {
+  background-color: #e74646;
+}
+
+.card-selected {
+  /* outline: 5px solid aqua; */
+  position: relative;
+}
+.card-selected::before {
+  content: "";
+  position: absolute;
+  top: -7px;
+  left: -7px;
+  right: -7px;
+  bottom: -7px;
+  border-radius: 10px;
+  border: 3px solid #00ffff;
+  pointer-events: none;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#action-button-container {
+  display: flex;
+  width: min(100%, 440px);
+  justify-content: center;
+}
+
+#action-button-container button {
+  flex: 1;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-weight: 600;
+  margin: 5px;
+  text-transform: uppercase;
+  transition: background-color 0.3s, transform 0.1s;
+}
+
+@media screen and (min-height: 770px) {
+  #action-button-container button {
+    padding: 20px 20px;
+  }
+}
+
+#mine-action-button {
+  background-color: #4664e7;
+}
+
+#mine-action-button:hover {
+  background-color: #3b54c7;
+}
+
+#enemy-action-button {
+  background-color: #e74646;
+}
+
+#enemy-action-button:hover {
+  background-color: #c73b3b;
+}
+
+#discard-action-button {
+  background-color: #a29494;
+}
+
+#discard-action-button:hover {
+  background-color: #8f7f7f;
+}

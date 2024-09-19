@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Durak Helper</title>
+    <link rel="icon" href="./assets/favicon.ico" />
+    <link rel="icon" href="./assets/favicon.svg" />
+    <link rel="stylesheet" type="text/css" href="style/reset.css" />
+    <link rel="stylesheet" type="text/css" href="style/fonts.css" />
+    <link rel="stylesheet" type="text/css" href="style/styles.css" />
+    <!-- PWA -->
+    <link rel="manifest" href="manifest.json" />
+    <!-- IOS support -->
+    <link rel="apple-touch-icon" href="/assets/favicon_180x180.png" />
+    <meta name="apple-mobile-web-app-status-bar" content="#192d5a" />
+    <meta name="theme-color" content="#192d5a" />
+  </head>
+  <body>
+    <header>
+      <h1 id="title">Durak Helper</h1>
+      <div class="state-controls">
+        <button id="undo-controls-button" class="controls-button">
+          <img
+            src="assets/undo_24dp.svg"
+            draggable="false"
+            alt="Undo last action"
+          />
+        </button>
+        <button id="redo-controls-button" class="controls-button">
+          <img
+            src="assets/redo_24dp.svg"
+            draggable="false"
+            alt="Redo last action"
+          />
+        </button>
+        <button id="reset-controls-button" class="controls-button">
+          <img
+            src="assets/restart_alt_24dp.svg"
+            draggable="false"
+            alt="Restart"
+          />
+        </button>
+      </div>
+    </header>
+
+    <div id="content">
+      <div id="card-grid"></div>
+    </div>
+
+    <footer>
+      <div id="action-button-container">
+        <button id="mine-action-button">Mine</button>
+        <button id="enemy-action-button">Enemy's</button>
+        <button id="discard-action-button">Discard</button>
+      </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
