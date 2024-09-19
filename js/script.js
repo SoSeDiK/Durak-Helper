@@ -69,7 +69,7 @@ function handleSelection(className) {
   undoStack.push(
     Array.from(allCards).map((card) => {
       return {
-        element: card,
+        card: card,
         classes: Array.from(card.classList).filter(
           (className) =>
             className.startsWith("card-") && className !== "card-selected"
@@ -80,19 +80,21 @@ function handleSelection(className) {
 
   selectedCards.forEach((card) => {
     card.classList.remove("card-selected");
-    if (className != "card-discarded")
+    if (className != "card-discarded") {
       card.classList.remove("card-owned", "card-enemy", "card-discarded");
-    else if (
+    } else if (
       !card.classList.contains("card-owned") &&
       !card.classList.contains("card-enemy")
-    )
+    ) {
       card.classList.add("card-enemy");
+    }
     card.classList.add(className);
+    card.disabled = card.classList.contains("card-discarded");
   });
 
   currentState = Array.from(allCards).map((card) => {
     return {
-      element: card,
+      card: card,
       classes: Array.from(card.classList).filter(
         (className) =>
           className.startsWith("card-") && className !== "card-selected"
@@ -122,14 +124,15 @@ const resetButton = document.getElementById("reset-controls-button");
 function undo() {
   if (undoStack.length > 0) {
     const lastAction = undoStack.pop();
-    lastAction.forEach(({ element, classes }) => {
-      element.classList.remove(
+    lastAction.forEach(({ card, classes }) => {
+      card.classList.remove(
         "card-selected",
         "card-owned",
         "card-enemy",
         "card-discarded"
       );
-      element.classList.add(...classes);
+      card.classList.add(...classes);
+      card.disabled = card.classList.contains("card-discarded");
     });
 
     redoStack.push(currentState);
@@ -142,14 +145,15 @@ function undo() {
 function redo() {
   if (redoStack.length > 0) {
     const lastAction = redoStack.pop();
-    lastAction.forEach(({ element, classes }) => {
-      element.classList.remove(
+    lastAction.forEach(({ card, classes }) => {
+      card.classList.remove(
         "card-selected",
         "card-owned",
         "card-enemy",
         "card-discarded"
       );
-      element.classList.add(...classes);
+      card.classList.add(...classes);
+      card.disabled = card.classList.contains("card-discarded");
     });
 
     undoStack.push(currentState);
@@ -162,6 +166,7 @@ function redo() {
 function reset() {
   const allCards = document.querySelectorAll(".card");
   allCards.forEach((card) => {
+    card.disabled = false;
     card.classList.remove(
       "card-selected",
       "card-owned",

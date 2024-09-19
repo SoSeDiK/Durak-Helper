@@ -112,12 +112,12 @@ header {
   padding: 0% 8%;
 }
 
-.card:hover {
+.card:not(.card-discarded):hover {
   transform: scale(1.05);
   transition: transform 0.2s ease;
 }
 
-.card:active {
+.card:not(.card-discarded):active {
   transform: scale(1.02);
   transition: transform 0.05s ease;
 }
@@ -151,6 +151,7 @@ header {
 .card-selected {
   position: relative;
 }
+
 .card-selected::before {
   content: "";
   position: absolute;
